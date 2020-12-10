@@ -61,7 +61,7 @@ Tatsuki Saito
 協力 Yusaku Sugiyama
 
 
-# COPYING
+# LICENSE
 
 GNU General Pubilc License v3.0
 

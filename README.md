@@ -22,9 +22,13 @@ LEDを2個使用し、入力した数字によって光るLEDを変える。
 
 # Requirement
 
+## Enviornment
+
 Raspberry Pi 4 Model B
 
-os:Ubuntu 20.04.1 LTS
+Ubuntu 20.04.1 LTS
+
+## tool
 
 ブレットボード
 
@@ -56,9 +60,13 @@ echo 0 の0を0～3までの数字に変えて実行してください。
 
 Tatsuki Saito
 
-ベースとなったプログラムの開発者：Associate Professor : Ryuichi Ueda.
+## ベースとなったプログラムの開発者
 
-協力 Yusaku Sugiyama
+Associate Professor : Ryuichi Ueda.
+
+## 協力 
+
+Yusaku Sugiyama
 
 
 # LICENSE

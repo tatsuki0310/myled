@@ -71,6 +71,6 @@ Yusaku Sugiyama
 
 # LICENSE
 
-GNU General Pubilc License v3.0
+GNU Affero General Pubilc License v3.0
 
 

@@ -1,6 +1,6 @@
 // SPDX-License-Identifer: GPL-3.0
 /*
- * Copyright (C) 2020 Hikaru Jitsukawa. All rights reserved.
+ * Copyright (C) 2020 Tatsuki Saito. All rights reserved.
  */
 
 #include <linux/module.h>
@@ -21,31 +21,29 @@ static volatile u32 *gpio_base = NULL;
 
 static ssize_t led_write(struct file* filp, const char* buf, size_t count, loff_t* pos)
 {
-	 char c;   
-	 if(copy_from_user(&c,buf,sizeof(char)))
-	 return -EFAULT;
+	char c;   
+	if(copy_from_user(&c,buf,sizeof(char)))
+	return -EFAULT;
 
-	 if(c == '0'){
+	if(c == '0'){
 		gpio_base[10] = 1 << 25;
 		gpio_base[7] = 1 << 24;
 	}
-	 else if(c == '1'){
+	else if(c == '1'){
 		gpio_base[7] = 1 << 25;
 		gpio_base[10] = 1 << 24;
 	}
-
-	 else if(c == '2'){
+	else if(c == '2'){
 	        gpio_base[7] = 1 << 25;
                 gpio_base[7] = 1 << 24;	 
 	}
-
-	 else if(c == '3'){
+	else if(c == '3'){
 		gpio_base[10] = 1 << 25;
 		gpio_base[10] = 1 << 24;
 	}
 
 	// printk(KERN_INFO "receive %c\n",c);
-	 return 1;
+	return 1;
 }
 
 static ssize_t sushi_read(struct file* filp, char* buf, size_t count, loff_t* pos)
@@ -62,7 +60,7 @@ static ssize_t sushi_read(struct file* filp, char* buf, size_t count, loff_t* po
 
 
 static struct file_operations led_fops = {
-	        .owner = THIS_MODULE,
+		.owner = THIS_MODULE,
 		.write = led_write,
 		.read = sushi_read
 };
@@ -87,9 +85,9 @@ static int __init init_mod(void)
        	}
 
 	cls = class_create(THIS_MODULE,"myled");   
-	        if(IS_ERR(cls)){
-			printk(KERN_ERR "class_create failed.");
-			return PTR_ERR(cls);
+	if(IS_ERR(cls)){
+		printk(KERN_ERR "class_create failed.");
+		return PTR_ERR(cls);
 		 }
 		device_create(cls, NULL, dev, NULL, "myled%d",MINOR(dev));
 

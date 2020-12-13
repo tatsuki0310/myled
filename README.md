@@ -62,7 +62,7 @@ Tatsuki Saito
 
 ## ベースとなったプログラムの開発者
 
-Associate Professor : Ryuichi Ueda.
+Ryuichi Ueda
 
 ## 協力 
 
